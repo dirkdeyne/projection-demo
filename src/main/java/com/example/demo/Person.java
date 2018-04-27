@@ -16,7 +16,9 @@ public class Person {
 
     @Column
     private String surname;
-
+    
+    protected Person() { /* why JPA */ }
+    
     public Person(String name, String surname) {
       super();
       this.name = name;
