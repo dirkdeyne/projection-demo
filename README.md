@@ -4,8 +4,7 @@ small Demo to show how Spring Jpa Projections work.
 
 run `DemoApplication`
 
-`
-	
+
 	public interface PersonRepository  extends CrudRepository<Person, Long> {
 
 	  @RestResource(path="name", rel="by-name-contains")
@@ -19,7 +18,6 @@ run `DemoApplication`
 
 	}
 
-`
 
 although each method returns a page of type **Person**, using _spring-boot-starter-data-rest_ all projections are available!
 
