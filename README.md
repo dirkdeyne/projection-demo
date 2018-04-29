@@ -4,19 +4,19 @@ small Demo to show how Spring Jpa Projections work.
 
 run `DemoApplication`
 
-`java
+`
 	
 	public interface PersonRepository  extends CrudRepository<Person, Long> {
-	  
+
 	  @RestResource(path="name", rel="by-name-contains")
 	  Page<Person> findByNameContains(@Param("name") String name, Pageable page);
-	  
+
 	  @RestResource(path="surname", rel="by-surname-contains")
 	  Page<Person> findBySurnameContains(@Param("name") String name, Pageable page);
-	  
+
 	  @RestResource(path="nickname", rel="by-nickname-contains")
 	  Page<Person> findByNicknameContains(@Param("name") String name, Pageable page);
-	
+
 	}
 
 `
