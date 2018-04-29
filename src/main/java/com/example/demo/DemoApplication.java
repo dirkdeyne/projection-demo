@@ -17,14 +17,13 @@ public class DemoApplication  implements CommandLineRunner{
   
   @Override
   public void run(String... args) throws Exception {
-     Set<Person> people = Stream.of("Deyne,Dirk","Devos,Eric","Mahsum,Mahsum")
+     Set<Person> people = Stream.of("Deyne,Dirk,deynedirk","Devos,Eric,fastric","Mahsum,Demir,mahsumdemir","Gierke,Oliver,spring-oliver")
            .map(s -> s.split(","))
-           .map(a -> new Person(a[0], a[1]))
+           .map(a -> new Person(a[0], a[1],a[2]))
            .collect(Collectors.toSet());
            
-     personRepo.saveAll(people);
-     
-     personRepo.findByNameContains("Deyn").forEach(n -> System.err.println(n.getName()));
+     personRepo.save(people);
+  
   }
   
 	public static void main(String[] args) {

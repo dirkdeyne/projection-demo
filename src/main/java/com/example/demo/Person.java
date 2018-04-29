@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,19 +9,17 @@ public class Person {
     @Id
     @GeneratedValue
     private Long id;
-
-    @Column
+    
     private String name;
-
-    @Column
     private String surname;
+    private String nickname;
     
     protected Person() { /* why JPA */ }
     
-    public Person(String name, String surname) {
-      super();
+    public Person(String name, String surname, String nickname) {
       this.name = name;
       this.surname = surname;
+      this.nickname = nickname;
     }
 
     public String getName() {
@@ -35,6 +32,14 @@ public class Person {
 
     public String getSurname() {
       return surname;
+    }
+
+    public String getNickname() {
+      return nickname;
+    }
+
+    public void setNickname(String nickname) {
+      this.nickname = nickname;
     }
 
     public void setSurname(String surname) {
